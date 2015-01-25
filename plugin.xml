@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="info.nfuture.plugin.mazeplugin" version="0.0.1" >
+
+  <name>MazePlugin</name>
+  <description>MazePlugin</description>
+  <author>Kenichi Naito</author>
+  <license>MIT</license>
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>
+
+  <js-module src="www/maze.js" name="maze">
+    <clobbers target="DungeoneerMaze" />
+  </js-module>
+
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="MazePlugin">
+	<param name="android-package" value="info.nfuture.plugin.mazeplugin.MazePlugin"/>
+      </feature>
+    </config-file>
+    <source-file src="src/android/CustomSurfaceView.java" target-dir="src/info/nfuture/plugin/mazeplugin" />
+    <source-file src="src/android/MakeMap.java" target-dir="src/info/nfuture/plugin/mazeplugin" />
+    <source-file src="src/android/MapPoint.java" target-dir="src/info/nfuture/plugin/mazeplugin" />
+    <source-file src="src/android/MazeMap.java" target-dir="src/info/nfuture/plugin/mazeplugin" />
+    <source-file src="src/android/MazePlugin.java" target-dir="src/info/nfuture/plugin/mazeplugin" />
+    <source-file src="src/android/MazeRender.java" target-dir="src/info/nfuture/plugin/mazeplugin" />
+    <source-file src="src/android/MazeRenderInterface.java" target-dir="src/info/nfuture/plugin/mazeplugin" />
+    <resource-file src="res/android/image_a1.png" target="res/drawable-hdpi/image_a1.png" /> 
+  </platform>
+
+</plugin>
